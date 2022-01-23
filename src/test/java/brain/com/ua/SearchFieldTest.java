@@ -1,8 +1,8 @@
 package brain.com.ua;
 
-import main.java.brain.com.ua.pageobjects.HomePage;
-import main.java.brain.com.ua.pageobjects.SearchResultPage;
-import main.java.brain.com.ua.runners.TestRunner;
+import brain.com.ua.pageobjects.HomePage;
+import brain.com.ua.pageobjects.SearchResultPage;
+import brain.com.ua.runners.TestRunner;
 import org.testng.annotations.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

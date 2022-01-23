@@ -1,10 +1,7 @@
-package main.java.brain.com.ua.pageobjects;
+package brain.com.ua.pageobjects;
 
-import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-
-import java.util.List;
 
 import static com.codeborne.selenide.CollectionCondition.sizeNotEqual;
 import static com.codeborne.selenide.Condition.visible;

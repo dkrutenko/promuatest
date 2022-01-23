@@ -1,4 +1,4 @@
-package main.java.brain.com.ua.runners;
+package brain.com.ua.runners;
 
 import org.testng.annotations.BeforeMethod;
 

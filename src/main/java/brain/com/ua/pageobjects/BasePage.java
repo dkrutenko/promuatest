@@ -1,4 +1,4 @@
-package main.java.brain.com.ua.pageobjects;
+package brain.com.ua.pageobjects;
 
 import io.qameta.allure.Step;
 
