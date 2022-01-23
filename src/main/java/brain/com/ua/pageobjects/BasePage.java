@@ -1,28 +1,28 @@
-package main.java.brain.com.ua.pageobjects;
+package brain.com.ua.pageobjects;
 
-import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$x;
 
 public abstract class BasePage<T extends BasePage<T>> {
 
-    private final SelenideElement search = $x("//div[@class='container container-new']//div[@class='search-form header-search-form']");
-
     @Step("BasePage: Sended text in search field")
     public T fillSearchField(String text) {
-        search.click();
-        search.clear();
-        search.sendKeys(text);
+        $x("//div[@class='header-bottom-in']//*[@type='search']")
+                .shouldBe(visible)
+                .setValue(text);
 
         return (T) this;
     }
 
     @Step("BasePage: Clicked on 'Знайти' button")
-    public T clickOnSearchButton() {
-        $x("//div[@class='container container-new']//div[@class='search-form header-search-form']//input[@type='submit']").click();
+    public SearchResultPage clickOnSearchButton() {
+        $x("//div[@class='header-bottom-in']//*[@class='search-button-first-form']")
+                .shouldBe(visible)
+                .click();
 
-        return (T) this;
+        return new SearchResultPage();
     }
 
     @Step("BasePage: Clicked on 'Магазини' button ")

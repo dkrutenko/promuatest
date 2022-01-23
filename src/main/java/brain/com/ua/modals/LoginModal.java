@@ -1,8 +1,8 @@
-package main.java.brain.com.ua.modals;
+package brain.com.ua.modals;
 
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
-import main.java.brain.com.ua.pageobjects.BasePage;
+import brain.com.ua.pageobjects.BasePage;
 
 import static com.codeborne.selenide.Selenide.$x;
 
