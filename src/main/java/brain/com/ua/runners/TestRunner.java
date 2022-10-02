@@ -10,7 +10,7 @@ public abstract class TestRunner {
     @BeforeMethod
     public void openHomePage() {
         timeout = 10000;
-        open("https://brain.com.ua/ukr/");
+        open("https://prom.ua/ua/");
     }
 
 }
