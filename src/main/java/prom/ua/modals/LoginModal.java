@@ -19,6 +19,7 @@ public class LoginModal extends BasePage<LoginModal> {
         passwordField.sendKeys(password);
 
         return this;
+        
     }
 
     @Step("LoginModal: Clicked on 'Sign in' button")
