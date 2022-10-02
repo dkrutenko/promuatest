@@ -7,9 +7,9 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public abstract class BasePage<T extends BasePage<T>> {
 
-    @Step("BasePage: Sended text in search field")
+    @Step("BasePage: Send text in search field")
     public T fillSearchField(String text) {
-        $x("//div[@class='header-bottom-in']//*[@type='search']")
+        $x("//input[@name='search_term']")
                 .shouldBe(visible)
                 .setValue(text);
 
@@ -18,7 +18,7 @@ public abstract class BasePage<T extends BasePage<T>> {
 
     @Step("BasePage: Clicked on 'Знайти' button")
     public SearchResultPage clickOnSearchButton() {
-        $x("//div[@class='header-bottom-in']//*[@class='search-button-first-form']")
+        $x("//button[@data-qaid='search_btn']")
                 .shouldBe(visible)
                 .click();
 

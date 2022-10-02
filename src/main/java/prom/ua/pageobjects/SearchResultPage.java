@@ -14,6 +14,14 @@ public class SearchResultPage {
 
     private final ElementsCollection goodsList = $$x("//*[@class='br-pp-desc br-pp-ipd-hidden ']");
 
+    public ProductPage selectFirstItem(String item) {
+        $x("//div[@data-position-qaid="+item+"]")
+                .shouldBe(visible)
+                .click();
+
+        return new ProductPage();
+    }
+
     public SearchResultPage selectRequiredCategoryById(String categoryId) {
         $x("//div[@class='hidden-lg br-sidebar-in']//a[@class='search-category category-"+categoryId+"']")
                 .shouldBe(visible)
