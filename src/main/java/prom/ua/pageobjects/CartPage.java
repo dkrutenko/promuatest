@@ -1,4 +1,4 @@
-package brain.com.ua.pageobjects;
+package prom.ua.pageobjects;
 
 public class CartPage extends BasePage<CartPage> {
 }

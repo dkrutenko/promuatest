@@ -1,4 +1,4 @@
-package brain.com.ua.runners;
+package prom.ua.runners;
 
 import org.testng.annotations.BeforeMethod;
 

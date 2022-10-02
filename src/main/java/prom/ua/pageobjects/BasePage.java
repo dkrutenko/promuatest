@@ -1,4 +1,4 @@
-package brain.com.ua.pageobjects;
+package prom.ua.pageobjects;
 
 import io.qameta.allure.Step;
 

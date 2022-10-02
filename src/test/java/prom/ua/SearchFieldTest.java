@@ -1,8 +1,8 @@
-package brain.com.ua;
+package prom.ua;
 
-import brain.com.ua.pageobjects.HomePage;
-import brain.com.ua.pageobjects.SearchResultPage;
-import brain.com.ua.runners.TestRunner;
+import prom.ua.pageobjects.HomePage;
+import prom.ua.pageobjects.SearchResultPage;
+import prom.ua.runners.TestRunner;
 import org.testng.annotations.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

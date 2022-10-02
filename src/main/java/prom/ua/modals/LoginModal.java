@@ -1,8 +1,8 @@
-package brain.com.ua.modals;
+package prom.ua.modals;
 
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
-import brain.com.ua.pageobjects.BasePage;
+import prom.ua.pageobjects.BasePage;
 
 import static com.codeborne.selenide.Selenide.$x;
 
