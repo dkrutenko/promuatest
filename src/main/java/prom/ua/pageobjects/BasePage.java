@@ -16,6 +16,14 @@ public abstract class BasePage<T extends BasePage<T>> {
         return (T) this;
     }
 
+    public T clickOnShowSidebarButton() {
+        $x("//button[@data-qaid='show_sidebar']")
+                .shouldBe(visible)
+                .click();
+
+        return (T) this;
+    }
+
     @Step("BasePage: Clicked on 'Знайти' button")
     public SearchResultPage clickOnSearchButton() {
         $x("//button[@data-qaid='search_btn']")
@@ -41,7 +49,13 @@ public abstract class BasePage<T extends BasePage<T>> {
 
     @Step("BasePage: Clicked on switch language button")
     public T clickOnSwitchLanguageButton() {
-        $x("//li[@class='header-language-item ']").click();
+        $x("//button[@data-qaid='lang_menu']").click();
+
+        return (T) this;
+    }
+
+    public T selectLanguage(String ua_lang, String ru_lang) {
+        $x("//span[contains(@data-qaid, " + ua_lang + "lang)]").scrollIntoView(true).click();
 
         return (T) this;
     }
