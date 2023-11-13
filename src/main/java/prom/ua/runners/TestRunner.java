@@ -13,7 +13,6 @@ import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public abstract class TestRunner {
-    WebDriver driver;
     ChromeDriverService chrome_service;
 
     @Parameters("browser")
