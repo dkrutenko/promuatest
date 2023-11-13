@@ -1,16 +1,10 @@
 package prom.ua.pageobjects;
 
-import com.codeborne.selenide.ElementsCollection;
-
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selenide.$$x;
 import static com.codeborne.selenide.Selenide.$x;
 
 
 public class SearchResultPage {
-
-    private final ElementsCollection goodsList = $$x("//*[@class='br-pp-desc br-pp-ipd-hidden ']");
-
     public ProductPage selectFirstItem(String item) {
         $x("//div[@data-position-qaid="+item+"]")
                 .shouldBe(visible)
