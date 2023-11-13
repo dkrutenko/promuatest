@@ -4,6 +4,8 @@
 .idea/dictionaries
 .idea/vcs.xml
 .idea/jsLibraryMappings.xml
+.allure
+/allure-results/
 *.iml
 # Windows exe files
 *.exe
