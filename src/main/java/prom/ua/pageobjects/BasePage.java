@@ -1,11 +1,18 @@
 package prom.ua.pageobjects;
 
+import com.codeborne.selenide.ElementsCollection;
+import io.netty.util.internal.ThreadLocalRandom;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$x;
 
 public abstract class BasePage<T extends BasePage<T>> {
+
+
+    public static ElementsCollection getRandomElement(ElementsCollection[] arr) {
+        return arr[ThreadLocalRandom.current().nextInt(arr.length)];
+    }
 
     @Step("BasePage: Send text in search field")
     public T fillSearchField(String text) {
@@ -63,6 +70,24 @@ public abstract class BasePage<T extends BasePage<T>> {
     @Step("BasePage: Clicked on 'login' button")
     public T clickOnLoginButton() {
         $x("//div[@class='br-th-login ']").click();
+
+        return (T) this;
+    }
+
+    @Step("BasePage: Clicked on prom logo")
+    public T clickHomePage() {
+        $x("//a[@title='prom.ua']")
+                .shouldBe(visible)
+                .click();
+
+        return (T) this;
+    }
+
+    @Step("BasePage: Clicked on shopping cart")
+    public T clickShoppingCart() {
+        $x("//button[@data-qaid='shopping_cart']")
+                .shouldBe(visible)
+                .click();
 
         return (T) this;
     }
