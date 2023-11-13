@@ -2,7 +2,6 @@ package prom.ua;
 
 import prom.ua.pageobjects.HomePage;
 import prom.ua.pageobjects.ProductPage;
-import prom.ua.pageobjects.SearchResultPage;
 import prom.ua.runners.TestRunner;
 import org.testng.annotations.Test;
 
@@ -12,8 +11,8 @@ public class SearchFieldTest extends TestRunner {
 
     @Test
     public void verifySearchFieldTest() {
-        var requiredItem = "рюкзак";
-        var actual = "Рюкзак похідний туристичний 80 літрів";
+        var requiredItem = "Razer Ornata Chroma";
+        var actual = "Ігрова клавіатура Razer Ornata Chroma";
         var item_id = "1";
         var homePage = new HomePage();
         var productPage = new ProductPage();
