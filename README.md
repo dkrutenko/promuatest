@@ -1,2 +1,2 @@
-# PromUaTest
+# PromUaTest - study project
  
