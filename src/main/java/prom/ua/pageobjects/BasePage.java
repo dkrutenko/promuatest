@@ -1,4 +1,4 @@
-package prom.ua.pageobjects;
+package prom.ua.pageobjects; 
 
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
@@ -16,7 +16,7 @@ public class BasePage<T extends BasePage<T>> {
     private final SelenideElement shoppingCartButton = $x("//button[@data-qaid='shopping_cart']");
     private int distance;
 
-    @Step("BasePage: Send text in search field")
+    @Step("BasePage: Send text in search input")
     public T fillSearchField(String text) {
         searchInput.shouldBe(visible)
                 .setValue(text);
