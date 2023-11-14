@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$x;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
-public abstract class BasePage<T extends BasePage<T>> {
+public class BasePage<T extends BasePage<T>> {
     private final SelenideElement searchInput = $x("//input[@name='search_term']");
     private final SelenideElement showSidebarButton = $x("//button[@data-qaid='show_sidebar']");
     private final SelenideElement searchButton = $x("//button[@data-qaid='search_btn']");
