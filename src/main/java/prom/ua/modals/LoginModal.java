@@ -7,9 +7,9 @@ import prom.ua.pageobjects.BasePage;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class LoginModal extends BasePage<LoginModal> {
-
     private final SelenideElement phoneField = $x("//input[@class='input-field phone_mask']");
     private final SelenideElement passwordField = $x("//input[@class='input-field br-login-pass-field']");
+    private final SelenideElement loginButton = $x("//form[@class='br-login-form modal-br-login-form']//button[@type='submit']");
 
     @Step("LoginModal: Filled login fields(phone and password)")
     public LoginModal fillLoginFields(String phone, String password) {
@@ -23,7 +23,7 @@ public class LoginModal extends BasePage<LoginModal> {
 
     @Step("LoginModal: Clicked on 'Sign in' button")
     public LoginModal clickOnSignInButton() {
-        $x("//form[@class='br-login-form modal-br-login-form']//button[@type='submit']").click();
+        loginButton.click();
 
         return this;
     }

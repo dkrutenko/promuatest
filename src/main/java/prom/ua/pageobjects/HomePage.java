@@ -1,5 +1,6 @@
 package prom.ua.pageobjects;
 
+import com.codeborne.selenide.ElementsCollection;
 import io.qameta.allure.Step;
 import java.util.Random;
 
@@ -11,14 +12,16 @@ import static java.time.Duration.*;
 public class HomePage extends BasePage<HomePage> {
     private static Random random = new Random();
 
+    private final ElementsCollection forYouItemsList = $$x("//div[@class='M3v0L YKUY6']/following-sibling::div/div");
+
+
     @Step("HomePage: Select first available 'for you' item on homepage")
     public HomePage selectRandomForYouItem() {
         srollDown();
-        var for_you_items_list = $$x("//div[@class='M3v0L YKUY6']/following-sibling::div/div")
-                .shouldHave(sizeNotEqual(0), ofSeconds(20));
+        forYouItemsList.shouldHave(sizeNotEqual(0), ofSeconds(20));
 
-        int random_index = random.nextInt(for_you_items_list.size());
-        for_you_items_list.get(random_index)
+        int random_index = random.nextInt(forYouItemsList.size());
+        forYouItemsList.get(random_index)
                 .shouldBe(visible, ofSeconds(10))
                 .click();
 

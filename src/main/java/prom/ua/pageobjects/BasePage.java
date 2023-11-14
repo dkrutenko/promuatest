@@ -1,7 +1,6 @@
 package prom.ua.pageobjects;
 
-import com.codeborne.selenide.ElementsCollection;
-import io.netty.util.internal.ThreadLocalRandom;
+import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import org.openqa.selenium.JavascriptExecutor;
 
@@ -10,24 +9,23 @@ import static com.codeborne.selenide.Selenide.$x;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public abstract class BasePage<T extends BasePage<T>> {
-
-
-    public static ElementsCollection getRandomElement(ElementsCollection[] arr) {
-        return arr[ThreadLocalRandom.current().nextInt(arr.length)];
-    }
+    private final SelenideElement searchInput = $x("//input[@name='search_term']");
+    private final SelenideElement showSidebarButton = $x("//button[@data-qaid='show_sidebar']");
+    private final SelenideElement searchButton = $x("//button[@data-qaid='search_btn']");
+    private final SelenideElement goToHomePageButton = $x("//a[@title='prom.ua']");
+    private final SelenideElement shoppingCartButton = $x("//button[@data-qaid='shopping_cart']");
+    private int distance;
 
     @Step("BasePage: Send text in search field")
     public T fillSearchField(String text) {
-        $x("//input[@name='search_term']")
-                .shouldBe(visible)
+        searchInput.shouldBe(visible)
                 .setValue(text);
 
         return (T) this;
     }
 
     public T clickOnShowSidebarButton() {
-        $x("//button[@data-qaid='show_sidebar']")
-                .shouldBe(visible)
+        showSidebarButton.shouldBe(visible)
                 .click();
 
         return (T) this;
@@ -35,18 +33,10 @@ public abstract class BasePage<T extends BasePage<T>> {
 
     @Step("BasePage: Clicked on 'Знайти' button")
     public SearchResultPage clickOnSearchButton() {
-        $x("//button[@data-qaid='search_btn']")
-                .shouldBe(visible)
+        searchButton.shouldBe(visible)
                 .click();
 
         return new SearchResultPage();
-    }
-
-    @Step("BasePage: Clicked on 'Магазини' button ")
-    public T clickShopsButton() {
-        $x("//li[@class='top-menu-list-item folder']").click();
-
-        return (T) this;
     }
 
     @Step("BasePage: Clicked on 'Всі категорії' button")
@@ -78,8 +68,7 @@ public abstract class BasePage<T extends BasePage<T>> {
 
     @Step("BasePage: Clicked on prom logo")
     public T clickHomePage() {
-        $x("//a[@title='prom.ua']")
-                .shouldBe(visible)
+        goToHomePageButton.shouldBe(visible)
                 .click();
 
         return (T) this;
@@ -87,8 +76,7 @@ public abstract class BasePage<T extends BasePage<T>> {
 
     @Step("BasePage: Clicked on shopping cart")
     public T clickShoppingCart() {
-        $x("//button[@data-qaid='shopping_cart']")
-                .shouldBe(visible)
+        shoppingCartButton.shouldBe(visible)
                 .click();
 
         return (T) this;
@@ -97,6 +85,6 @@ public abstract class BasePage<T extends BasePage<T>> {
     @Step("BasePage: perform scroll down to element on 1000 pixels")
     public void srollDown() {
         JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
-        js.executeScript("window.scrollBy(0,1000)", "");
+        js.executeScript("window.scrollBy(0, 1000)", "");
     }
 }
