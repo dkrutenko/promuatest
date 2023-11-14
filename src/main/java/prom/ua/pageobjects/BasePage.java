@@ -1,4 +1,4 @@
-package pdrom.ua.pageobjects;
+package prom.ua.pageobjects;
 
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
