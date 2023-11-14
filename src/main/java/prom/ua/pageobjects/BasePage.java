@@ -3,9 +3,11 @@ package prom.ua.pageobjects;
 import com.codeborne.selenide.ElementsCollection;
 import io.netty.util.internal.ThreadLocalRandom;
 import io.qameta.allure.Step;
+import org.openqa.selenium.JavascriptExecutor;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$x;
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public abstract class BasePage<T extends BasePage<T>> {
 
@@ -90,5 +92,11 @@ public abstract class BasePage<T extends BasePage<T>> {
                 .click();
 
         return (T) this;
+    }
+
+    @Step("BasePage: perform scroll down to element on 1000 pixels")
+    public void srollDown() {
+        JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
+        js.executeScript("window.scrollBy(0,1000)", "");
     }
 }
